@@ -426,7 +426,7 @@ queueMicrotask(() => {
       el: '#vcomment',
       appId: 'C8nzON66JGueCic0RAeemGxp-gzGzoHsz',
       appKey: 'P0YG0iEeVoPJDKYDcPeG5q70',
-      avatar: 'mp',
+      avatar: 'retro',
       serverURLs: '',
       emojiMaps: "",
       path: window.location.pathname,
@@ -465,7 +465,7 @@ queueMicrotask(() => {
 
   const getIcon = (icon, mail) => {
     if (icon) return icon
-    let defaultIcon = '?d=mp'
+    let defaultIcon = '?d=retro'
     let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
     return iconUrl
   }
