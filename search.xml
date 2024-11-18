@@ -59,10 +59,116 @@
   </entry>
   <entry>
     <title>NER-浅层理解</title>
+    <url>/2024/11/18/NER%E6%B5%85%E5%B1%82%E7%90%86%E8%A7%A30/</url>
+    <content><![CDATA[<h1>NER-浅层理解</h1>
+<h2 id="简介">简介</h2>
+<mark class="hl-label default">命名实体识别</mark> (Named Entity Recognition，NER)是<mark class="hl-label default">自然语言处理</mark> (Natural Language Processing, NLP)领域中一项基础的信息抽取任务，NER往往是关系抽取、知识图谱、问答系统等其他诸多NLP任务的基础。
+<p>命名实体识别任务是指从给定的一个非结构化的文本中识别出其中的</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NER-浅层理解</title>
     <url>/2024/11/18/NER%E6%B5%85%E5%B1%82%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<h1>NER-浅层理解</h1>
 <h2 id="简介">简介</h2>
-<mark class="hl-label default">命名实体识别</mark> (Named Entity Recognition，NER)是]]></content>
+<mark class="hl-label default">命名实体识别</mark> (Named Entity Recognition，NER)是<mark class="hl-label default">自然语言处理</mark> (Natural Language Processing, NLP)领域中一项基础的信息抽取任务，NER往往是关系抽取、知识图谱、问答系统等其他诸多NLP任务的基础。
+<p>命名实体识别任务是指从给定的一个非结构化的文本中识别出其中的<mark class="hl-label default">命名实体</mark> ，并对实体进行分类。命名实体例如时间、人名、地名、机构名等。</p>
+<p>命名实体识别任务常常转化为<mark class="hl-label default">序列标注问题</mark> ，利用<span class="p blue">BIO</span>、<span class="p blue">BIOES</span>和<span class="p blue">BMES</span>等常用的标注规则对经过分词的文本进行token标注。通过构建模型对文本的每个token标签进行预测，进而进行实体识别。</p>
+<p>序列标注的命名实体识别众多方法中将<span class="p blue">CNN</span>、<span class="p blue">RNN</span>和<span class="p blue">BERT</span>等深度模型与<span class="p blue">条件随机场CRF</span>结合已经成为最主流和普遍的方法。</p>
+<blockquote>
+<p><strong>基于序列标注的命名实体识别的发展历程</strong></p>
+<ul>
+<li><strong>[机器学习]</strong>：早期传统机器学习时代，除了利用人工规则的方法外，往往利用隐马尔科夫链HMM和条件随机场CRF进行实体标注；</li>
+<li>**[深度学习]：**随着深度学习的发展，将CNN和RNN做为基本的文本特征编码器，更好的学习token或word的隐层表示，再利用CRF进行实体标签分类，Bi-LSTM-CRF是最常用和普遍的实体识别模型；</li>
+<li><strong>[预训练模型]</strong>：以BERT为代表的预训练模型表现出了强大的文本表示和理解能力，目前流行的方法是将BERT或BERT-Bi-LSTM作为底层的文本特征编码器，再利用CRF进行实体标签预测。现在，对于许多命名实体识别任务可以将BERT-Softmax、BERT-CRF、BERT-Bi-LSTM-CRF这几个模型作为baseline，而且能达到很好的效果，这几乎得益于BERT模型的强大文本表征建模能力。</li>
+</ul>
+</blockquote>
+<h2 id="主要流程">主要流程</h2>
+<p>接下来通过介绍预训练模型的方法来熟悉NER的基本流程。</p>
+<pre><code class="highlight mermaid">flowchart LR
+  data[&quot;文章
+  _text_&quot;]--切分--&gt;A[&quot;词语
+  _token(s)_&quot;]--去重--&gt;B[&quot;词表
+  _vocab_&quot;]
+  C[_BERT/CNN/RNN_]--词向量--&gt;D[&quot;全连接层
+  _Bi-LSTM_&quot;]--&gt;E[&quot;_Softmax/CRF_&quot;]</code></pre>
+<p>假设给定一篇文本text，text中包含k类命名实体，NER的目标就是要从text中将这k类命名实体筛选出来。</p>
+<ol>
+<li>将text切分为字符串序列，即token序列。token是text的元素。</li>
+</ol>
+<div class="note info flat"><p>切分有多种方法，最常见的是分词，此外还有随机切分、ngram等方法</p>
+</div>
+<ol start="2">
+<li>将token序列去重得到词表，即vocab。type是vocab的元素，type即token序列去重后的元素。</li>
+</ol>
+<div class="note info flat"><p>tokenization用于token序列生产，主要用于将“I’m Yang“替换为”I am Yang”，一般用在英文中</p>
+</div>
+<ol start="3">
+<li>vocab经过嵌入层和文本编码层得到词向量。</li>
+</ol>
+<div class="note info flat"><p>CNN、RNN、BERT等模型均可用于对文本token序列(或者说vocab)进行编码表征</p>
+</div>
+<ol start="4">
+<li>
+<p>词向量经过一个全连接的分类层得到分类结果Logits以及各个实体标签的分数logits_i。</p>
+</li>
+<li>
+<p>Logits经过标签判断得到最终模型。</p>
+</li>
+</ol>
+<h2 id="名词介绍">名词介绍</h2>
+<h3 id="token、type、vocab">token、type、vocab</h3>
+<p>把文本切分成一个字符串序列，其元素一般称为token，或者叫词语。</p>
+<blockquote>
+<p>[‘我’, ‘是’, ‘中国人’]</p>
+<p>这句话中的“中国人”这个字符串是一个token。我所知道的所有叫token的东西，都是字符串类型。而这个token的词向量，是一个数值向量，编程里叫一维数组，向量就不是token了，也不能叫token。</p>
+</blockquote>
+<div class="note orange anzhiyufont anzhiyu-icon-dengpao flat"><p>token是文本数据处理的基本单位。它可以是一个单词、短语、标点符号或者其他任何文本分割单位。token的具体样子取决于应用场景以及所使用的分词方法。</p>
+</div>
+<p>如果我们把字符串序列（语料）中所有的token做一个去重，就得到了一个词汇表，其中的每一个词语被称为type。</p>
+<p>vocab =（type1,type2,…,typeN），即vocab是type的集合。</p>
+<blockquote>
+<p><strong>语言学中的解释</strong></p>
+<p>token（标记/词符）: “文本内出现的单词总数叫做文本标记数。”（Richards and Schmidt.）</p>
+<p>type（类型/词形）：“不同单词的总数则称为文内标记类型数。”（Richards and Schmidt.）</p>
+<p>family/ group（词族）：主词(headword)及其派生和屈折形式。</p>
+</blockquote>
+<h3 id="tokenization">tokenization</h3>
+<p>tokenization也叫word segmentation，是一种操作。</p>
+<p>它按照特定需求，把文本切分成一个字符串序列。一般来说，我们要求序列的元素有一定的意义，比如“text mining is time-consuming”需要处理成&quot;text mining/ is/ time-consuming&quot;，其中&quot;text mining&quot;表示&quot;文本挖掘&quot;。</p>
+<p>英文信息处理中，tokenization需要把&quot;I’m Yang&quot;这样的句子转换为&quot;I am Yang&quot;，即将一些词语、短语的写法规范化。中文由于文字本身没有形态变化，不需要太多的规范化操作，大家关注的主要的是切分操作。</p>
+<h4 id="词向量">词向量</h4>
+<p>词向量是将单词表示为数值向量的技术。</p>
+<p>每个单词被赋予一个多维空间中的向量，通常通过词嵌入（Word Embedding）技术（如Word2Vec或GloVe）获得。词向量捕捉了单词的语义信息，使得相似意义的单词在向量空间中位置接近。</p>
+<p>tokenization和切分是将文本转换为tokens的过程，而词向量是将这些tokens转换为数值向量的过程。通常，一旦文本被分解为tokens，每个token都会被映射到一个预先训练好的词向量。</p>
+<div class="note info flat"><p>info 预先训练好的词向量，也叫预训练模型。</p>
+</div>
+<p>通过将tokens转换为词向量，可以在数学上处理和分析文本数据。词向量捕捉了tokens的语义信息，使得可以计算单词之间的相似性、执行类比推理等。</p>
+<p>在训练神经网络模型时，tokens通常首先被转换为词向量，然后作为模型的输入。词向量为模型提供了一种结构化、数值化的方式来理解文本数据。</p>
+<h3 id="one-hot编码、Embedding">one-hot编码、Embedding</h3>
+<p>经过one-hot编码可以将密集的矩阵转换为稀疏矩阵方便计算，但会占用大量资源。</p>
+<p>Embedding也叫嵌入层、嵌入式，可以将过于稀疏的矩阵进行适度的密集(矩阵乘法)，即对矩阵进行降维。此外，当矩阵维度低，难以区分特征时，可以使用Embedding对低维数据升维。Embedding是token向词向量映射过程中重要的步骤。</p>
+<h3 id="隐藏层">隐藏层</h3>
+<p>大部分来讲，隐藏层的意义，是把前一层的向量变成新的向量。就是坐标变换，也就是把空间扭曲一下变下维度，让齐更加线性可分。</p>
+<p>未完待续</p>
+<h1>参考</h1>
+<p><a href="https://zhuanlan.zhihu.com/p/561776148">命名实体识别模型BERT-Bi-LSTM-CRF - 知乎</a></p>
+<p><a href="https://github.com/M-YoungBWeN/BERT_NER_Chinese_TF2.X">M-YoungBWeN/BERT_NER_Chinese_TF2.X</a></p>
+<p><a href="https://github.com/stanleylsx/entity_extractor_by_ner">stanleylsx/entity_extractor_by_ner</a></p>
+<p><a href="https://blog.csdn.net/scgaliguodong123_/article/details/121303421">浅析命名实体识别（NER）的三种序列标注方法_基于序列标注的命名实体识别-CSDN博客</a></p>
+<p><a href="https://www.zhihu.com/question/64984731">NLP领域中的token和tokenization到底指的是什么？ - 知乎</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/663021826">token与词向量 - 知乎</a></p>
+<p><a href="https://www.zhihu.com/question/264967683">请解释一下这些语料库语言学概念：type，token, lemma，word family？ - 知乎</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/164502624">一文读懂Embedding的概念，以及它和深度学习的关系 - 知乎</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg5ODAzMTkyMg==&amp;mid=2247488458&amp;idx=1&amp;sn=50d4bd1e94c85b4c589baa9be6757ae7&amp;chksm=c0699b97f71e1281c62c7e3691cbc4981afd0f8f0a4f7070beaa15b33e687b3431914d5ab851&amp;scene=21#wechat_redirect">BiLSTM上的CRF，用命名实体识别任务来解释CRF（1）</a></p>
+<p><a href="https://blog.csdn.net/scgaliguodong123_/article/details/121303421">BIO、BIOES和BMES</a></p>
+]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
