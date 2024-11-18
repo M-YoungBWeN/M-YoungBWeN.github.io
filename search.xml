@@ -79,13 +79,13 @@
 <h2 id="简介">简介</h2>
 <mark class="hl-label default">命名实体识别</mark> (Named Entity Recognition，NER)是<mark class="hl-label default">自然语言处理</mark> (Natural Language Processing, NLP)领域中一项基础的信息抽取任务，NER往往是关系抽取、知识图谱、问答系统等其他诸多NLP任务的基础。
 <p>命名实体识别任务是指从给定的一个非结构化的文本中识别出其中的<mark class="hl-label default">命名实体</mark> ，并对实体进行分类。命名实体例如时间、人名、地名、机构名等。</p>
-<p>命名实体识别任务常常转化为<mark class="hl-label default">序列标注问题</mark> ，利用<span class="p blue">BIO</span>、<span class="p blue">BIOES</span>和<span class="p blue">BMES</span>等常用的标注规则对经过分词的文本进行token标注。通过构建模型对文本的每个token标签进行预测，进而进行实体识别。</p>
-<p>序列标注的命名实体识别众多方法中将<span class="p blue">CNN</span>、<span class="p blue">RNN</span>和<span class="p blue">BERT</span>等深度模型与<span class="p blue">条件随机场CRF</span>结合已经成为最主流和普遍的方法。</p>
+<p>命名实体识别任务常常转化为<mark class="hl-label default">序列标注问题</mark> ，利用<span class="p cyan">BIO</span>、<span class="p cyan">BIOES</span>和<span class="p cyan">BMES</span>等常用的标注规则对经过分词的文本进行token标注。通过构建模型对文本的每个token标签进行预测，进而进行实体识别。</p>
+<p>序列标注的命名实体识别众多方法中将<span class="p cyan">CNN</span>、<span class="p cyan">RNN</span>和<span class="p cyan">BERT</span>等深度模型与<span class="p cyan">条件随机场CRF</span>结合已经成为最主流和普遍的方法。</p>
 <blockquote>
 <p><strong>基于序列标注的命名实体识别的发展历程</strong></p>
 <ul>
 <li><strong>[机器学习]</strong>：早期传统机器学习时代，除了利用人工规则的方法外，往往利用隐马尔科夫链HMM和条件随机场CRF进行实体标注；</li>
-<li>**[深度学习]：**随着深度学习的发展，将CNN和RNN做为基本的文本特征编码器，更好的学习token或word的隐层表示，再利用CRF进行实体标签分类，Bi-LSTM-CRF是最常用和普遍的实体识别模型；</li>
+<li><strong>[深度学习]</strong>：随着深度学习的发展，将CNN和RNN做为基本的文本特征编码器，更好的学习token或word的隐层表示，再利用CRF进行实体标签分类，Bi-LSTM-CRF是最常用和普遍的实体识别模型；</li>
 <li><strong>[预训练模型]</strong>：以BERT为代表的预训练模型表现出了强大的文本表示和理解能力，目前流行的方法是将BERT或BERT-Bi-LSTM作为底层的文本特征编码器，再利用CRF进行实体标签预测。现在，对于许多命名实体识别任务可以将BERT-Softmax、BERT-CRF、BERT-Bi-LSTM-CRF这几个模型作为baseline，而且能达到很好的效果，这几乎得益于BERT模型的强大文本表征建模能力。</li>
 </ul>
 </blockquote>
@@ -126,7 +126,7 @@
 <h3 id="token、type、vocab">token、type、vocab</h3>
 <p>把文本切分成一个字符串序列，其元素一般称为token，或者叫词语。</p>
 <blockquote>
-<p>[‘我’, ‘是’, ‘中国人’]</p>
+<p><strong>[‘我’, ‘是’, ‘中国人’]</strong></p>
 <p>这句话中的“中国人”这个字符串是一个token。我所知道的所有叫token的东西，都是字符串类型。而这个token的词向量，是一个数值向量，编程里叫一维数组，向量就不是token了，也不能叫token。</p>
 </blockquote>
 <div class="note orange anzhiyufont anzhiyu-icon-dengpao flat"><p>token是文本数据处理的基本单位。它可以是一个单词、短语、标点符号或者其他任何文本分割单位。token的具体样子取决于应用场景以及所使用的分词方法。</p>
@@ -156,7 +156,8 @@
 <p>Embedding也叫嵌入层、嵌入式，可以将过于稀疏的矩阵进行适度的密集(矩阵乘法)，即对矩阵进行降维。此外，当矩阵维度低，难以区分特征时，可以使用Embedding对低维数据升维。Embedding是token向词向量映射过程中重要的步骤。</p>
 <h3 id="隐藏层">隐藏层</h3>
 <p>大部分来讲，隐藏层的意义，是把前一层的向量变成新的向量。就是坐标变换，也就是把空间扭曲一下变下维度，让齐更加线性可分。</p>
-<p>未完待续</p>
+<div class="tip bell"><p>未完待续</p>
+</div>
 <h1>参考</h1>
 <p><a href="https://zhuanlan.zhihu.com/p/561776148">命名实体识别模型BERT-Bi-LSTM-CRF - 知乎</a></p>
 <p><a href="https://github.com/M-YoungBWeN/BERT_NER_Chinese_TF2.X">M-YoungBWeN/BERT_NER_Chinese_TF2.X</a></p>
