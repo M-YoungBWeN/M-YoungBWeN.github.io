@@ -57,4 +57,17 @@
 <p><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>NER-浅层理解</title>
+    <url>/2024/11/18/NER%E6%B5%85%E5%B1%82%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1>NER-浅层理解</h1>
+<h2 id="简介">简介</h2>
+<mark class="hl-label default">命名实体识别</mark> (Named Entity Recognition，NER)是]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
 </search>
