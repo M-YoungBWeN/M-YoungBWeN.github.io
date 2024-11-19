@@ -76,12 +76,12 @@
 <p>接下来通过介绍预训练模型的方法来熟悉NER的基本流程。</p>
 <div class="mermaid-wrap"><pre class="mermaid-src" hidden>
   flowchart LR
-  data[&quot;文章
-  _text_&quot;]--切分--&gt;A[&quot;词语
-  _token(s)_&quot;]--去重--&gt;B[&quot;词表
-  _vocab_&quot;]
-  C[_BERT&#x2F;CNN&#x2F;RNN_]--词向量--&gt;D[&quot;全连接层
-  _Bi-LSTM_&quot;]--&gt;E[&quot;_Softmax&#x2F;CRF_&quot;]
+  data[&quot;&#96;文章
+  _text_&#96;&quot;]--切分--&gt;A[&#96;&quot;词语
+  _token(s)_&#96;&quot;]--去重--&gt;B[&quot;&#96;词表
+  _vocab_&#96;&quot;]
+  C[&quot;&#96;_BERT&#x2F;CNN&#x2F;RNN_&#96;&quot;]--词向量--&gt;D[&quot;&#96;全连接层
+  _Bi-LSTM_&#96;&quot;]--&gt;E[&quot;&#96;_Softmax&#x2F;CRF_&#96;&quot;]
   </pre></div>
 <p>假设给定一篇文本text，text中包含k类命名实体，NER的目标就是要从text中将这k类命名实体筛选出来。</p>
 <ol>
