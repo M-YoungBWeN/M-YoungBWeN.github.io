@@ -1,61 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Node+Hexo</title>
-    <url>/2024/11/16/Node-Hexo/</url>
-    <content><![CDATA[<h1>Node.js</h1>
-<blockquote>
-<p><strong>nvm</strong></p>
-<p>nvm是一个node的版本管理工具，可以对node的版本进行控制。</p>
-<p><a href="https://github.com/coreybutler/nvm-windows/releases">Releases · coreybutler/nvm-windows</a></p>
-</blockquote>
-<blockquote>
-<p><strong>npm</strong></p>
-<p>npm用于初始化工程、管理依赖。</p>
-</blockquote>
-<h2 id="NVM操作">NVM操作</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\M_YoungBW&gt;nvm</span><br><span class="line"></span><br><span class="line">Running version 1.1.12.</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">  nvm <span class="built_in">arch</span>                     : Show <span class="keyword">if</span> node is running <span class="keyword">in</span> 32 or 64 bit mode.</span><br><span class="line">  nvm current                  : Display active version.</span><br><span class="line">  nvm debug                    : Check the NVM4W process <span class="keyword">for</span> known problems (troubleshooter).</span><br><span class="line">  nvm install &lt;version&gt; [<span class="built_in">arch</span>] : The version can be a specific version, <span class="string">&quot;latest&quot;</span> <span class="keyword">for</span> the latest current version, or <span class="string">&quot;lts&quot;</span> <span class="keyword">for</span> the</span><br><span class="line">                                 most recent LTS version. Optionally specify whether to install the 32 or 64 bit version (defaults</span><br><span class="line">                                 to system <span class="built_in">arch</span>). Set [<span class="built_in">arch</span>] to <span class="string">&quot;all&quot;</span> to install 32 AND 64 bit versions.</span><br><span class="line">                                 Add --insecure to the end of this <span class="built_in">command</span> to bypass SSL validation of the remote download server.</span><br><span class="line">  nvm list [available]         : List the node.js installations. Type <span class="string">&quot;available&quot;</span> at the end to see what can be installed. Aliased as <span class="built_in">ls</span>.</span><br><span class="line">  nvm on                       : Enable node.js version management.</span><br><span class="line">  nvm off                      : Disable node.js version management.</span><br><span class="line">  nvm proxy [url]              : Set a proxy to use <span class="keyword">for</span> downloads. Leave [url] blank to see the current proxy.</span><br><span class="line">                                 Set [url] to <span class="string">&quot;none&quot;</span> to remove the proxy.</span><br><span class="line">  nvm node_mirror [url]        : Set the node mirror. Defaults to https://nodejs.org/dist/. Leave [url] blank to use default url.</span><br><span class="line">  nvm npm_mirror [url]         : Set the npm mirror. Defaults to https://github.com/npm/cli/archive/. Leave [url] blank to default url.</span><br><span class="line">  nvm uninstall &lt;version&gt;      : The version must be a specific version.</span><br><span class="line">  nvm use [version] [<span class="built_in">arch</span>]     : Switch to use the specified version. Optionally use <span class="string">&quot;latest&quot;</span>, <span class="string">&quot;lts&quot;</span>, or <span class="string">&quot;newest&quot;</span>.</span><br><span class="line">                                 <span class="string">&quot;newest&quot;</span> is the latest installed version. Optionally specify 32/64bit architecture.</span><br><span class="line">                                 nvm use &lt;<span class="built_in">arch</span>&gt; will <span class="built_in">continue</span> using the selected version, but switch to 32/64 bit mode.</span><br><span class="line">  nvm root [path]              : Set the directory <span class="built_in">where</span> nvm should store different versions of node.js.</span><br><span class="line">                                 If &lt;path&gt; is not <span class="built_in">set</span>, the current root will be displayed.</span><br><span class="line">  nvm [--]version              : Displays the current running version of nvm <span class="keyword">for</span> Windows. Aliased as v.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;nvm list available</span><br><span class="line"></span><br><span class="line">|   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |</span><br><span class="line">|--------------|--------------|--------------|--------------|</span><br><span class="line">|    23.2.0    |   22.11.0    |   0.12.18    |   0.11.16    |</span><br><span class="line">|    23.1.0    |   20.18.0    |   0.12.17    |   0.11.15    |</span><br><span class="line">|    23.0.0    |   20.17.0    |   0.12.16    |   0.11.14    |</span><br><span class="line">|   22.10.0    |   20.16.0    |   0.12.15    |   0.11.13    |</span><br><span class="line">|    22.9.0    |   20.15.1    |   0.12.14    |   0.11.12    |</span><br><span class="line">|    22.8.0    |   20.15.0    |   0.12.13    |   0.11.11    |</span><br><span class="line">|    22.7.0    |   20.14.0    |   0.12.12    |   0.11.10    |</span><br><span class="line">|    22.6.0    |   20.13.1    |   0.12.11    |    0.11.9    |</span><br><span class="line">|    22.5.1    |   20.13.0    |   0.12.10    |    0.11.8    |</span><br><span class="line">|    22.5.0    |   20.12.2    |    0.12.9    |    0.11.7    |</span><br><span class="line">|    22.4.1    |   20.12.1    |    0.12.8    |    0.11.6    |</span><br><span class="line">|    22.4.0    |   20.12.0    |    0.12.7    |    0.11.5    |</span><br><span class="line">|    22.3.0    |   20.11.1    |    0.12.6    |    0.11.4    |</span><br><span class="line">|    22.2.0    |   20.11.0    |    0.12.5    |    0.11.3    |</span><br><span class="line">|    22.1.0    |   20.10.0    |    0.12.4    |    0.11.2    |</span><br><span class="line">|    22.0.0    |    20.9.0    |    0.12.3    |    0.11.1    |</span><br><span class="line">|    21.7.3    |   18.20.5    |    0.12.2    |    0.11.0    |</span><br><span class="line">|    21.7.2    |   18.20.4    |    0.12.1    |    0.9.12    |</span><br><span class="line">|    21.7.1    |   18.20.3    |    0.12.0    |    0.9.11    |</span><br><span class="line">|    21.7.0    |   18.20.2    |   0.10.48    |    0.9.10    |</span><br><span class="line"></span><br><span class="line">This is a partial list. For a complete list, visit https://nodejs.org/en/download/releases</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br><span class="line">C:\Users\M_YoungBW&gt;nvm install 22.11.0</span><br><span class="line">Downloading node.js version 22.11.0 (64-bit)...</span><br><span class="line">Extracting node and npm...</span><br><span class="line">Complete</span><br><span class="line">npm v10.9.0 installed successfully.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Installation complete. If you want to use this version, <span class="built_in">type</span></span><br><span class="line"></span><br><span class="line">nvm use 22.11.0</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\M_YoungBW&gt;node -v</span><br><span class="line"><span class="string">&#x27;node&#x27;</span> 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;nvm use 22.11.0</span><br><span class="line">Now using node v22.11.0 (64-bit)</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;node -v</span><br><span class="line">v22.11.0</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br><span class="line">C:\Users\M_YoungBW&gt;npm -v</span><br><span class="line">10.9.0</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="npm镜像">npm镜像</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">E:\1_Code\Blog_Data\Hexo&gt; npm config get registry</span><br><span class="line">https://registry.npmjs.org/</span><br><span class="line"></span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt;</span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt;npm config <span class="built_in">set</span> registry=https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt; npm config get registry</span><br><span class="line">https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt;</span><br></pre></td></tr></table></figure>
-<h1>Hexo</h1>
-<p>安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>初始化</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p><code>hexo clean </code>清除了你之前生成的东西，也可以不加。<br>
-<code>hexo generate</code> 顾名思义，生成静态文章，可以用 <code>hexo g</code>缩写<br>
-<code>hexo deploy</code> 部署文章，可以用<code>hexo d</code>缩写</p>
-<p>GitHub解析</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
-<h1>GitTalk</h1>
-<h1>Valine</h1>
-<div class="tip bell"><p>未完待续</p>
-</div>
-<h1>参考</h1>
-<p><a href="https://blog.csdn.net/m0_68054161/article/details/128996041">从零开始搭建web开发环境_web环境-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/renke_edogawa/article/details/138833533">The authenticity of host ‘github.com (20.205.243.166)‘ can‘t be established. 报错解决-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/jerry81smile/article/details/132666321">【终于解决了hexo发布到GitHub出现404的问题了】_hexo 上传成功,github无法访问-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/m0_53127626/article/details/136089677">hexo部署到gitee(码云)_hexo部署gitee-CSDN博客</a></p>
-<p><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
-<p><a href="https://blog.csdn.net/sinat_32873711/article/details/129192910">搭建评论系统，Gittalk插件踩坑指南｜玩转GitHub Pages三部曲（三）-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/GAI159/article/details/105128186">解决hexo本地与部署不一致问题_hexo本地部署和线上不一样-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/cungudafa/article/details/104281764">Valine - 一款快速、简洁且高效的无后端评论系统-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/weixin_42691420/article/details/102761576">Matery（Hexo）主题加载gittalk插件_hexo talk插件-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/m0_57545353/article/details/128807337">记录一个hexo+butterfly主题集成gitalk的坑：未找到相关的 Issues 进行评论，请联系@作者初始化创建-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/kin_16/article/details/139515478">【Git】修改设置 git 的 username、email_git设置username-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/qq_29824567/article/details/139362632">提升你的阅读效率：背景颜色的重要性_阅读纸质背景颜色值-CSDN博客</a></p>
-]]></content>
-      <categories>
-        <category>前端后端</category>
-      </categories>
-      <tags>
-        <tag>前端,SQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NER-浅层理解</title>
     <url>/2024/11/18/NER%E6%B5%85%E5%B1%82%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<h1>NER-浅层理解</h1>
@@ -160,6 +105,61 @@
       </categories>
       <tags>
         <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node+Hexo</title>
+    <url>/2024/11/16/Node-Hexo/</url>
+    <content><![CDATA[<h1>Node.js</h1>
+<blockquote>
+<p><strong>nvm</strong></p>
+<p>nvm是一个node的版本管理工具，可以对node的版本进行控制。</p>
+<p><a href="https://github.com/coreybutler/nvm-windows/releases">Releases · coreybutler/nvm-windows</a></p>
+</blockquote>
+<blockquote>
+<p><strong>npm</strong></p>
+<p>npm用于初始化工程、管理依赖。</p>
+</blockquote>
+<h2 id="NVM操作">NVM操作</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\M_YoungBW&gt;nvm</span><br><span class="line"></span><br><span class="line">Running version 1.1.12.</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">  nvm <span class="built_in">arch</span>                     : Show <span class="keyword">if</span> node is running <span class="keyword">in</span> 32 or 64 bit mode.</span><br><span class="line">  nvm current                  : Display active version.</span><br><span class="line">  nvm debug                    : Check the NVM4W process <span class="keyword">for</span> known problems (troubleshooter).</span><br><span class="line">  nvm install &lt;version&gt; [<span class="built_in">arch</span>] : The version can be a specific version, <span class="string">&quot;latest&quot;</span> <span class="keyword">for</span> the latest current version, or <span class="string">&quot;lts&quot;</span> <span class="keyword">for</span> the</span><br><span class="line">                                 most recent LTS version. Optionally specify whether to install the 32 or 64 bit version (defaults</span><br><span class="line">                                 to system <span class="built_in">arch</span>). Set [<span class="built_in">arch</span>] to <span class="string">&quot;all&quot;</span> to install 32 AND 64 bit versions.</span><br><span class="line">                                 Add --insecure to the end of this <span class="built_in">command</span> to bypass SSL validation of the remote download server.</span><br><span class="line">  nvm list [available]         : List the node.js installations. Type <span class="string">&quot;available&quot;</span> at the end to see what can be installed. Aliased as <span class="built_in">ls</span>.</span><br><span class="line">  nvm on                       : Enable node.js version management.</span><br><span class="line">  nvm off                      : Disable node.js version management.</span><br><span class="line">  nvm proxy [url]              : Set a proxy to use <span class="keyword">for</span> downloads. Leave [url] blank to see the current proxy.</span><br><span class="line">                                 Set [url] to <span class="string">&quot;none&quot;</span> to remove the proxy.</span><br><span class="line">  nvm node_mirror [url]        : Set the node mirror. Defaults to https://nodejs.org/dist/. Leave [url] blank to use default url.</span><br><span class="line">  nvm npm_mirror [url]         : Set the npm mirror. Defaults to https://github.com/npm/cli/archive/. Leave [url] blank to default url.</span><br><span class="line">  nvm uninstall &lt;version&gt;      : The version must be a specific version.</span><br><span class="line">  nvm use [version] [<span class="built_in">arch</span>]     : Switch to use the specified version. Optionally use <span class="string">&quot;latest&quot;</span>, <span class="string">&quot;lts&quot;</span>, or <span class="string">&quot;newest&quot;</span>.</span><br><span class="line">                                 <span class="string">&quot;newest&quot;</span> is the latest installed version. Optionally specify 32/64bit architecture.</span><br><span class="line">                                 nvm use &lt;<span class="built_in">arch</span>&gt; will <span class="built_in">continue</span> using the selected version, but switch to 32/64 bit mode.</span><br><span class="line">  nvm root [path]              : Set the directory <span class="built_in">where</span> nvm should store different versions of node.js.</span><br><span class="line">                                 If &lt;path&gt; is not <span class="built_in">set</span>, the current root will be displayed.</span><br><span class="line">  nvm [--]version              : Displays the current running version of nvm <span class="keyword">for</span> Windows. Aliased as v.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;nvm list available</span><br><span class="line"></span><br><span class="line">|   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |</span><br><span class="line">|--------------|--------------|--------------|--------------|</span><br><span class="line">|    23.2.0    |   22.11.0    |   0.12.18    |   0.11.16    |</span><br><span class="line">|    23.1.0    |   20.18.0    |   0.12.17    |   0.11.15    |</span><br><span class="line">|    23.0.0    |   20.17.0    |   0.12.16    |   0.11.14    |</span><br><span class="line">|   22.10.0    |   20.16.0    |   0.12.15    |   0.11.13    |</span><br><span class="line">|    22.9.0    |   20.15.1    |   0.12.14    |   0.11.12    |</span><br><span class="line">|    22.8.0    |   20.15.0    |   0.12.13    |   0.11.11    |</span><br><span class="line">|    22.7.0    |   20.14.0    |   0.12.12    |   0.11.10    |</span><br><span class="line">|    22.6.0    |   20.13.1    |   0.12.11    |    0.11.9    |</span><br><span class="line">|    22.5.1    |   20.13.0    |   0.12.10    |    0.11.8    |</span><br><span class="line">|    22.5.0    |   20.12.2    |    0.12.9    |    0.11.7    |</span><br><span class="line">|    22.4.1    |   20.12.1    |    0.12.8    |    0.11.6    |</span><br><span class="line">|    22.4.0    |   20.12.0    |    0.12.7    |    0.11.5    |</span><br><span class="line">|    22.3.0    |   20.11.1    |    0.12.6    |    0.11.4    |</span><br><span class="line">|    22.2.0    |   20.11.0    |    0.12.5    |    0.11.3    |</span><br><span class="line">|    22.1.0    |   20.10.0    |    0.12.4    |    0.11.2    |</span><br><span class="line">|    22.0.0    |    20.9.0    |    0.12.3    |    0.11.1    |</span><br><span class="line">|    21.7.3    |   18.20.5    |    0.12.2    |    0.11.0    |</span><br><span class="line">|    21.7.2    |   18.20.4    |    0.12.1    |    0.9.12    |</span><br><span class="line">|    21.7.1    |   18.20.3    |    0.12.0    |    0.9.11    |</span><br><span class="line">|    21.7.0    |   18.20.2    |   0.10.48    |    0.9.10    |</span><br><span class="line"></span><br><span class="line">This is a partial list. For a complete list, visit https://nodejs.org/en/download/releases</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br><span class="line">C:\Users\M_YoungBW&gt;nvm install 22.11.0</span><br><span class="line">Downloading node.js version 22.11.0 (64-bit)...</span><br><span class="line">Extracting node and npm...</span><br><span class="line">Complete</span><br><span class="line">npm v10.9.0 installed successfully.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Installation complete. If you want to use this version, <span class="built_in">type</span></span><br><span class="line"></span><br><span class="line">nvm use 22.11.0</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\M_YoungBW&gt;node -v</span><br><span class="line"><span class="string">&#x27;node&#x27;</span> 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;nvm use 22.11.0</span><br><span class="line">Now using node v22.11.0 (64-bit)</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;node -v</span><br><span class="line">v22.11.0</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br><span class="line">C:\Users\M_YoungBW&gt;npm -v</span><br><span class="line">10.9.0</span><br><span class="line"></span><br><span class="line">C:\Users\M_YoungBW&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="npm镜像">npm镜像</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">E:\1_Code\Blog_Data\Hexo&gt; npm config get registry</span><br><span class="line">https://registry.npmjs.org/</span><br><span class="line"></span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt;</span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt;npm config <span class="built_in">set</span> registry=https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt; npm config get registry</span><br><span class="line">https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line">E:\1_Code\Blog_Data\Hexo&gt;</span><br></pre></td></tr></table></figure>
+<h1>Hexo</h1>
+<p>安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>初始化</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p><code>hexo clean </code>清除了你之前生成的东西，也可以不加。<br>
+<code>hexo generate</code> 顾名思义，生成静态文章，可以用 <code>hexo g</code>缩写<br>
+<code>hexo deploy</code> 部署文章，可以用<code>hexo d</code>缩写</p>
+<p>GitHub解析</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
+<h1>GitTalk</h1>
+<h1>Valine</h1>
+<div class="tip bell"><p>未完待续</p>
+</div>
+<h1>参考</h1>
+<p><a href="https://blog.csdn.net/m0_68054161/article/details/128996041">从零开始搭建web开发环境_web环境-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/renke_edogawa/article/details/138833533">The authenticity of host ‘github.com (20.205.243.166)‘ can‘t be established. 报错解决-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/jerry81smile/article/details/132666321">【终于解决了hexo发布到GitHub出现404的问题了】_hexo 上传成功,github无法访问-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/m0_53127626/article/details/136089677">hexo部署到gitee(码云)_hexo部署gitee-CSDN博客</a></p>
+<p><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
+<p><a href="https://blog.csdn.net/sinat_32873711/article/details/129192910">搭建评论系统，Gittalk插件踩坑指南｜玩转GitHub Pages三部曲（三）-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/GAI159/article/details/105128186">解决hexo本地与部署不一致问题_hexo本地部署和线上不一样-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/cungudafa/article/details/104281764">Valine - 一款快速、简洁且高效的无后端评论系统-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/weixin_42691420/article/details/102761576">Matery（Hexo）主题加载gittalk插件_hexo talk插件-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/m0_57545353/article/details/128807337">记录一个hexo+butterfly主题集成gitalk的坑：未找到相关的 Issues 进行评论，请联系@作者初始化创建-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/kin_16/article/details/139515478">【Git】修改设置 git 的 username、email_git设置username-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/qq_29824567/article/details/139362632">提升你的阅读效率：背景颜色的重要性_阅读纸质背景颜色值-CSDN博客</a></p>
+]]></content>
+      <categories>
+        <category>前端后端</category>
+      </categories>
+      <tags>
+        <tag>前端,SQL</tag>
       </tags>
   </entry>
 </search>
