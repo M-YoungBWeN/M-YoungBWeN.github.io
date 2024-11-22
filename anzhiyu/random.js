@@ -1,3 +1,3 @@
-var posts=["2024/11/18/NER浅层理解/","2024/09/22/雷达/"];function toRandomPost(){
+var posts=["2024/11/18/NER浅层理解/","2024/09/22/雷达/","2024/11/16/Node-Hexo/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
