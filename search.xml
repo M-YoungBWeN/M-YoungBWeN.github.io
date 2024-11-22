@@ -106,10 +106,12 @@
 <h3 id="计算过程">计算过程</h3>
 <p>整体思想：通过比对目标方向向量和雷达波束方向向量的夹角和雷达波束宽度的夹角判断目标是否在雷达波束范围内。</p>
 <p>计算流程：</p>
-<pre><code class="highlight mermaid">flowchart LR
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  flowchart LR
    计算目标方向向量 &amp; 计算雷达波束方向向量--&gt; 目标-雷达夹角--&gt;比对向量夹角
-   1/2*雷达波束宽度--&gt;比对向量夹角
-</code></pre>
+   1&#x2F;2*雷达波束宽度--&gt;比对向量夹角
+
+  </pre></div>
 <h4 id="计算目标方向向量">计算目标方向向量</h4>
 <p>计算导弹和目标之间的方向向量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mrow><mi>M</mi><mi>T</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{MT}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">MT</span></span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
