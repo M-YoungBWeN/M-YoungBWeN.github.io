@@ -389,7 +389,7 @@ c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></spa
 <p>.</p>
 </blockquote>
 <h2 id="时域信号与频域信号">时域信号与频域信号</h2>
-<p>![]06.png)</p>
+<p><img src="/.xyz//06.png" alt></p>
 <p>线性调频信号的脉冲宽度：频率 f 与信号持续时间呈线性相关</p>
 <p>K为调频斜率：</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>K</mi><mo>=</mo><mfrac><mi>B</mi><msub><mi>T</mi><mi>c</mi></msub></mfrac><mspace linebreak="newline"></mspace><mi>B</mi><mtext>为发射最大带宽，有时也被当做信号带宽</mtext><mspace linebreak="newline"></mspace><mi>B</mi><mo>=</mo><msub><mi>f</mi><mtext>终</mtext></msub><mo>−</mo><msub><mi>f</mi><mtext>始</mtext></msub><mspace linebreak="newline"></mspace><msub><mi>T</mi><mi>c</mi></msub><mtext>为脉冲宽度，也叫信号持续时间</mtext></mrow><annotation encoding="application/x-tex">K=\frac{B}{T_{c}}\\B为发射最大带宽，有时也被当做信号带宽\\B=f_{终}-f_{始}\\T_{c}为脉冲宽度，也叫信号持续时间
